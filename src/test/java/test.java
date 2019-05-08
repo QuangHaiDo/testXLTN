@@ -1,20 +1,29 @@
 import Objects.Card;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class test {
 
+    public void showArray(ArrayList<Integer> a){
+        for(int e:a){
+            System.out.println(e);
+        }
+    }
     @Test
-    public void testGenerateColor() {/*
-        Card b = new Card();
-        System.out.print(b.getColor() + " " + b.getNumber() + " ");
-        Scanner sc = new Scanner(System.in);
-        String guestColor = sc.next();
-        int guestNumber = sc.nextInt();
-        String guestsuit = sc.next();
-        if (b.compare(guestColor, guestNumber, guestsuit)) System.out.println("Dung");
-        else System.out.println("Sai!");*/
+    public void testGenerateColor() {
+        ArrayList<Integer> arr = new ArrayList<Integer>();
+        int n=10;
+        for (int i=0;i<n;i++){
+            arr.add(i);
+        }
+        showArray(arr);
+        Collections.shuffle(arr);
+        System.out.println("Shuffle: ");
+        showArray(arr);
     }
 
 }

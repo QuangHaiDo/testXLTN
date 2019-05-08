@@ -24,7 +24,7 @@ public class CardList {
 
     public void showCardList(){
         for (Card b : List){
-            System.out.print(b.getNumber()+" "+ b.getSuit() +" "+ b.getColor()+" ");
+            System.out.print( List.indexOf(b) +" " + b.getNumber()+" "+ b.getSuit() +" "+ b.getColor()+" ");
         }
         System.out.println();
     }

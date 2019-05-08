@@ -3,6 +3,8 @@ package Game;
 import Objects.Card;
 import Objects.CardList;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class GamePlay {
@@ -21,8 +23,18 @@ public class GamePlay {
             cardList.generateCardList(score+1);
             cardList.showCardList();
 
+            /**
+             * Choose card to open with arr element order
+             */
+            ArrayList<Integer> arr = new ArrayList<Integer>();
+            for (int i=0;i<score+1;i++){
+                arr.add(i);
+            }
 
-            for(Card b :cardList.getList()){
+            Collections.shuffle(arr); //after this, arr elements have a random order
+
+            for(int e:arr){
+                System.out.println("Card at:"+e);
                 /**
                  * player answering
                  */
@@ -31,8 +43,8 @@ public class GamePlay {
                 String guestColor = sc.next();
 
 
-                if (b.compare(guestNumber,guestSuit.toLowerCase(),guestColor.toLowerCase())){
-
+                if (cardList.getList().get(e).compare(guestNumber,guestSuit.toLowerCase(),guestColor.toLowerCase())){
+                    System.out.println("Correct !!!");
                 }
                 else {
 
@@ -44,7 +56,7 @@ public class GamePlay {
 
                 }
             }
-            System.out.println("Correct !!!");
+
             score++;
         }
     }
