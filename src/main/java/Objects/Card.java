@@ -2,7 +2,7 @@ package Objects;
 
 public class Card {
     Color color;
-    int number;
+    Value value;
     Suit suit;
 
     public Color getColor() {
@@ -13,25 +13,26 @@ public class Card {
         this.color = color;
     }
 
-    public int getNumber() {
-        return number;
+    public Value getValue() {
+        return value;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
+    public void setValue(Value value) {
+        this.value = value;
     }
 
     public Suit getSuit(){return suit;}
     public Card() {
         this.color = Color.generateColor();
-        this.number = Number.generateNumber();
+        this.value = Value.generateValue();
         this.suit = Suit.generateSuit();
     }
-    public boolean compare(int number,String suit,String color){
+
+    public boolean compare(String value,String suit,String color){
         /*
         System.out.println(this.number+ " "+ this.color +" " +this.suit);
         System.out.println(number+ " "+color +" " +suit);*/
-        if (this.getNumber()== number &&
+        if (this.getValue().toString().compareTo(value)==0 &&
                 this.getColor().toString().compareTo(color)== 0 &&
                 this.getSuit().toString().compareTo(suit)==0
         )

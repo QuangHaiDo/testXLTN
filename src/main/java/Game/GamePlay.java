@@ -38,12 +38,22 @@ public class GamePlay {
                 /**
                  * player answering
                  */
+                /*
                 int guestNumber = sc.nextInt();
                 String guestSuit = sc.next();
                 String guestColor = sc.next();
 
-
+*/
+                String playerAnswer = sc.nextLine();//player answer
+                /*
                 if (cardList.getList().get(e).compare(guestNumber,guestSuit.toLowerCase(),guestColor.toLowerCase())){
+                    System.out.println("Correct !!!");
+                }*/
+                Card _this = cardList.getList().get(e);
+                if (playerAnswer.indexOf(_this.getValue().toString() ) >-1 &&
+                        playerAnswer.indexOf(_this.getSuit().toString() )>-1 &&
+                        playerAnswer.indexOf(_this.getColor().toString())>-1)
+                {
                     System.out.println("Correct !!!");
                 }
                 else {
