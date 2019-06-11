@@ -3,8 +3,10 @@ package Objects;
 import java.util.Random;
 
 public enum Color {
-    red,
-    black;
+    đỏ,
+    đen,
+    vàng,
+    xanh;
     /** Get a random color
      * @return Color
      */

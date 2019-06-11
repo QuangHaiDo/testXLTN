@@ -3,10 +3,10 @@ package Objects;
 import java.util.Random;
 
 public enum Suit {
-    heart,
-    diamond,
-    club,
-    spade;
+    cơ,
+    rô,
+    nhép,
+    bích;
     /** Get a random suit
      * @return Suit
      */
